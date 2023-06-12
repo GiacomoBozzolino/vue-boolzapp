@@ -33,10 +33,15 @@ body{
     height: 70px;
 }
 
+.col-4.backgroundgrey{
+    border-right: 1px solid lightgrey;
+}
+
 .allert{
     height: 10%;
     background-color: #8edafc;
 }
+
 .content{
     height: 100%;
 }
@@ -53,3 +58,16 @@ body{
     background-color: #eaeaea;
 }
     
+
+.avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.icon{
+    padding: 0 5px;
+    font-size: 20px;
+    color: grey;
+}
