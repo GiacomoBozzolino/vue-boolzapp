@@ -5,8 +5,9 @@
 }
 
 body{
-    background: #009688;
-    background: linear-gradient(0.5turn, #009688 15%, #d8dbd5 15%);
+    
+    background: linear-gradient( to bottom, #009688 20%, #d8dbd5 10%,);
+    
 
 }
 .height{
@@ -44,9 +45,11 @@ body{
 
 .content{
     height: 100%;
+    position: relative;
+  
 }
 .chat{
-    height: 90%;
+    height: calc(100% - 60px);
     background-image: url(.././img/mine.jpg);
     background-position: cover;
     /* background-repeat: no-repeat; */
@@ -54,8 +57,12 @@ body{
 
 
 .write-message{
-    height: 10%;
+    height: 60px;
     background-color: #eaeaea;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    left: 0;
 }
     
 
@@ -85,4 +92,18 @@ body{
     text-decoration: underline;
     color: grey;
     font-size: 13px;
+}
+
+input{
+    border: none;
+
+}
+
+.icon.p-2{
+    background-color:#F9F9F9 ;
+}
+
+#message{
+   
+    height: 80%;
 }
