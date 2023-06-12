@@ -4,7 +4,11 @@
     box-sizing: border-box;
 }
 
+body{
+    background: #009688;
+    background: linear-gradient(0.5turn, #009688 15%, #d8dbd5 15%);
 
+}
 .height{
     height: 90vh;
 }
@@ -19,16 +23,33 @@
 
 }
 
-.col-12{
+.col-4{
     background-color: cornflowerblue;
 }
 
+
 .backgroundgrey{
-    background-color: lightgray;
+    background-color: #eaeaea;
     height: 70px;
 }
 
+.allert{
+    height: 10%;
+    background-color: #8edafc;
+}
+.content{
+    height: 100%;
+}
 .chat{
     height: 90%;
-    background-image: url(./img/mine.jpg)
+    background-image: url(.././img/mine.jpg);
+    background-position: cover;
+    /* background-repeat: no-repeat; */
 }
+
+
+.write-message{
+    height: 10%;
+    background-color: #eaeaea;
+}
+    
