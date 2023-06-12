@@ -3,3 +3,32 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+.height{
+    height: 90vh;
+}
+
+
+.row{
+    background-color: dodgerblue;
+}
+
+.col-8{
+    background-color: darkgreen;
+
+}
+
+.col-12{
+    background-color: cornflowerblue;
+}
+
+.backgroundgrey{
+    background-color: lightgray;
+    height: 70px;
+}
+
+.chat{
+    height: 90%;
+    background-image: url(./img/mine.jpg)
+}
