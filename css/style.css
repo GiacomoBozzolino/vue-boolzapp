@@ -3,32 +3,44 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* INIZIO CLASSI DI UTILITES */
 body{
-    
-    background: linear-gradient( to bottom, #009688 20%, #d8dbd5 10%,);
-    
+    background: linear-gradient(180deg, #009688 15%, #D9DBD4 15%);
 
 }
+
 .height{
     height: 90vh;
 }
 
 
-.row{
-    background-color: dodgerblue;
+.content{
+    height: 100%;
+    position: relative;
+    
 }
 
-.col-8{
-    background-color: darkgreen;
+.icon{
+    padding: 0 5px;
+    font-size: 20px;
+    color: grey;
+}
+
+input{
+    border: none;
 
 }
 
-.col-4{
-    background-color: cornflowerblue;
+ul{
+    list-style: none;
 }
-
-
+/* CLASSI PRIMA RIGA */
+.avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
 .backgroundgrey{
     background-color: #eaeaea;
     height: 70px;
@@ -38,16 +50,29 @@ body{
     border-right: 1px solid lightgrey;
 }
 
+/* CLASSI CONTENUTO SECONDA RIGA */
+/* CLASSI COLONNA-4 */
 .allert{
     height: 10%;
     background-color: #8edafc;
 }
 
-.content{
-    height: 100%;
-    position: relative;
-  
+#bell{
+    font-size: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    color: #8edafc;
 }
+#text-line{
+    text-decoration: underline;
+    color: grey;
+    font-size: 13px;
+}
+
+
+/* CLASSI COLONNA-8 */
+
 .chat{
     height: calc(100% - 60px);
     background-image: url(.././img/mine.jpg);
@@ -65,40 +90,6 @@ body{
     left: 0;
 }
     
-
-.avatar{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 5px;
-}
-
-.icon{
-    padding: 0 5px;
-    font-size: 20px;
-    color: grey;
-}
-
-
-#bell{
-    font-size: 20px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 50%;
-    color: #8edafc;
-}
-
-#text-line{
-    text-decoration: underline;
-    color: grey;
-    font-size: 13px;
-}
-
-input{
-    border: none;
-
-}
-
 .icon.p-2{
     background-color:#F9F9F9 ;
 }
@@ -107,3 +98,10 @@ input{
    
     height: 80%;
 }
+
+
+
+
+
+
+
