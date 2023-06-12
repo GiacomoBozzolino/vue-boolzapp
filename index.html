@@ -9,128 +9,98 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
     <body>
-        <div class="container py-2">
-            <!-- INFORMAZIONI UTENTE -->
-            <div class="row ">
-                <div class="col-4 backgroundgrey">
-                    <div class="content d-flex justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <img class="avatar" src="./img/avatar_io.jpg" alt="">
-                            <div> Sofia</div>
+        <div id="app">
+            <div class="container py-2">
+                <!-- INFORMAZIONI UTENTE -->
+                <div class="row ">
+                    <div class="col-4 backgroundgrey">
+                        <div class="content d-flex justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <img class="avatar" src="./img/avatar_io.jpg" alt="">
+                                <div> Sofia</div>
+                            </div>
+                            <!-- ICONE MENU UTENTE -->
+                            <div class="d-flex align-items-center ">
+                                <i class="fa-solid fa-circle-notch icon" ></i>
+                                <i class="fa-solid fa-message icon"></i>
+                                <i class="fa-solid fa-ellipsis-vertical icon"></i>
+                            </div>
                         </div>
-                        <!-- ICONE MENU UTENTE -->
-                        <div class="d-flex align-items-center ">
-                            <i class="fa-solid fa-circle-notch icon" ></i>
-                            <i class="fa-solid fa-message icon"></i>
-                            <i class="fa-solid fa-ellipsis-vertical icon"></i>
+                    </div>
+                    <div class="col-8 backgroundgrey">
+                        <div class="content d-flex justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <img class="avatar" src="./img/avatar_1.jpg" alt="">
+                                <div> Michele</div>
+                            </div>
+                            <!-- ICONE MENU UTENTE -->
+                            <div class="d-flex align-items-center ">
+                                <i class="fa-solid fa-magnifying-glass icon" ></i>
+                                <i class="fa-solid fa-paperclip icon"></i>
+                                <i class="fa-solid fa-ellipsis-vertical icon"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-8 backgroundgrey">
-                    <div class="content d-flex justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <img class="avatar" src="./img/avatar_1.jpg" alt="">
-                            <div> Michele</div>
+                <div class="row height ">
+                    <!-- SEZIONE ELENCO CONTATTI -->
+                    <div class="col-4 px-0">
+                        <div class="content bg-white">
+                            <div class="allert d-flex align-items-center px-2">
+                                <i class="fa-solid fa-bell-slash" id="bell"></i>
+                                <div class="px-2">
+                                    <div>Ricevi notifiche di nuovi messaggi</div>
+                                    <div id="text-line">Attiva notifiche desktop</div>
+                                </div>
+                            </div>
+                            <div class="icon p-2 ">
+                               <div class="border d-flex align-items-center p-1 bg-white">
+                                    <i class="fa-solid fa-magnifying-glass px-1"></i>
+                                   <input class="w-100" type="search" name="search" id="search" placeholder="Cerca o inizia una nuova chat"> 
+                               </div>
+                            </div>
+                            <!-- ELENCO CONTATTI DA RECUPERARE SU JS -->
+                            <div>
+                                <ul v-for="(item, index) in contacts" >
+                                    <li class="py-2 border-bottom">
+                                        <div class="d-flex align-items-center">
+                                            <img class="avatar" :src="contacts[index].avatar" alt="">
+                                            <div> {{contacts[index].name}}</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <!-- ICONE MENU UTENTE -->
-                        <div class="d-flex align-items-center ">
-                            <i class="fa-solid fa-magnifying-glass icon" ></i>
-                            <i class="fa-solid fa-paperclip icon"></i>
-                            <i class="fa-solid fa-ellipsis-vertical icon"></i>
+                    </div>
+                    <!-- SEZIONE CHAT MESSAGGI -->
+                    <div class="col-8 px-0">
+                        <div class="content">
+                            <div class="chat ">
+                                <div class="text-sent">
+                                 Hai portato a spasso il cane?
+                                </div>
+                                <div class="text-sent"> 
+                                    Ricordati di stendere i panni
+                                </div>
+                                <div class="text-received">
+                                    Tutto fatto!
+                                </div>
+                                
+                            </div>
+                            <div class="d-flex justify-content-around align-items-center write-message ">
+                                <i class="fa-regular fa-face-smile icon"></i>
+                                <input class="w-75" type="text" name="message" id="message" placeholder=" Scrivi un messaggio">
+                                <i class="fa-solid fa-microphone icon"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row height ">
-                <!-- SEZIONE ELENCO CONTATTI -->
-                <div class="col-4 px-0">
-                    <div class="content bg-white">
-                        <div class="allert d-flex align-items-center px-2">
-                            <i class="fa-solid fa-bell-slash" id="bell"></i>
-                            <div class="px-2">
-                                <div>Ricevi notifiche di nuovi messaggi</div>
-                                <div id="text-line">Attiva notifiche desktop</div>
-                            </div>
-                        </div>
-                        <div class="icon p-2 ">
-                           <div class="border d-flex align-items-center p-1 bg-white">
-                                <i class="fa-solid fa-magnifying-glass px-1"></i>
-                               <input class="w-100" type="search" name="search" id="search" placeholder="Cerca o inizia una nuova chat"> 
-                           </div>
-                        </div>
-                        <!-- ELENCO CONTATTI DA RECUPERARE SU JS -->
-                        <div>
-                            <ul>
-                                <li class="py-2 border-bottom">
-                                    <div class="d-flex align-items-center">
-                                        <img class="avatar" src="./img/avatar_1.jpg" alt="">
-                                        <div> Michele</div>
-                                    </div>
-                                </li>
-                                <li class="py-2 border-bottom">
-                                    <div class="d-flex align-items-center">
-                                        <img class="avatar" src="./img/avatar_2.jpg" alt="">
-                                        <div> Michele</div>
-                                    </div>
-                                </li><li class="py-2 border-bottom">
-                                    <div class="d-flex align-items-center">
-                                        <img class="avatar" src="./img/avatar_3.jpg" alt="">
-                                        <div> Michele</div>
-                                    </div>
-                                </li><li class="py-2 border-bottom">
-                                    <div class="d-flex align-items-center">
-                                        <img class="avatar" src="./img/avatar_4.jpg" alt="">
-                                        <div> Michele</div>
-                                    </div>
-                                </li><li class="py-2 border-bottom">
-                                    <div class="d-flex align-items-center">
-                                        <img class="avatar" src="./img/avatar_5.jpg" alt="">
-                                        <div> Michele</div>
-                                    </div>
-                                </li><li class="py-2 border-bottom">
-                                    <div class="d-flex align-items-center">
-                                        <img class="avatar" src="./img/avatar_6.jpg" alt="">
-                                        <div> Michele</div>
-                                    </div>
-                                </li><li class="py-2 border-bottom">
-                                    <div class="d-flex align-items-center">
-                                        <img class="avatar" src="./img/avatar_7.jpg" alt="">
-                                        <div> Michele</div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- SEZIONE CHAT MESSAGGI -->
-                <div class="col-8 px-0">
-                    <div class="content">
-                        <div class="chat ">
-                            <div class="text-sent">
-                             Hai portato a spasso il cane?
-                            </div>
-                            <div class="text-sent"> 
-                                Ricordati di stendere i panni
-                            </div>
-                            <div class="text-received">
-                                Tutto fatto!
-                            </div>
-                            
-                        </div>
-                        <div class="d-flex justify-content-around align-items-center write-message ">
-                            <i class="fa-regular fa-face-smile icon"></i>
-                            <input class="w-75" type="text" name="message" id="message" placeholder=" Scrivi un messaggio">
-                            <i class="fa-solid fa-microphone icon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>   
         </div>
 
 
 
-
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script type="text/javascript" src="./js/script.js"></script>        
     </body>
 </html>
