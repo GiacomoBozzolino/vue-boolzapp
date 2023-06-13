@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             main_chat:0,
+            newMessage:'',
             //  INIZIO ARRAY
             contacts: [
                 {
@@ -179,12 +180,15 @@ createApp({
             console.log(this.main_chat)
         },
 
-        messages(index){
-            
-            
+        newText(newMessage, index){
+            let obj = {
+                message: newMessage,
+                status: 'sent'
+            }
 
-           
-            
+            this.contacts[index].messages.push(obj)
+            console.log(newMessage)   
+            this.newMessage=''
         }
     },
 
