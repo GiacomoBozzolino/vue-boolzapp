@@ -211,24 +211,35 @@ createApp({
             return today
         },
 
-        search(text_search){
-               let found =text_search
+        search(){
+               let found =this.text_search.toLowerCase()
                 console.log(found)
-                for (i=0; i < this.contacts.length; i++){
-                    let contact = this.contacts[i].name
-                    console.log(contact)
-                    let visible = this.contacts[i].visible
-                    console.log(visible)
-                    if (contact.includes(found)){
-                        visible = true
-                        console.log(visible)
+                this.contacts.forEach(element => {
+                    if (element.name.toLowerCase().includes(found)){
+                        element.visible=true
+
                     }
-                    else{
-                        visible = false
-                        console.log(visible)
+
+                    else {
+                       element.visible=false;
                     }
                     
-                }
+                });
+                // for (i=0; i < this.contacts.length; i++){
+                //     let contact = this.contacts[i].name
+                    
+                //     let visible = this.contacts[i].visible
+                    
+                //     if (contact.includes(found)){
+                //         visible = true
+                //         console.log(visible)
+                //     }
+                //     else{
+                //         visible = false
+                //         console.log(visible)
+                //     }
+                    
+                // }
         }
 
     },

@@ -65,23 +65,25 @@
                                <div class="border d-flex align-items-center p-1 bg-white">
                                     <i class="fa-solid fa-magnifying-glass px-1"></i>
                                     <!-- BARRA DI RICERCA CONTATTI -->
-                                   <input @keyup.enter="search(text_search)" v-model="text_search"  class="w-100" type="search" name="search" id="search" placeholder="Cerca o inizia una nuova chat"> 
+                                   <input @keyup="search(text_search)" v-model="text_search"  class="w-100" type="search" name="search" id="search" placeholder="Cerca o inizia una nuova chat"> 
                                </div>
                             </div>
                             <!-- ELENCO CONTATTI DA RECUPERARE SU JS -->
                             <div>
                                 <ul  class="list-contact p-0 " >
                                     <li v-for="(item, index) in contacts" class="py-2 px-1 border-bottom" :class="main_chat === index ?'active':''" @click="bigChat(index)"  >
-                                        <div :class="item.visible === false ? 'hide':'' ">
-                                            <div class="d-flex align-items-center"  >
-                                                <img class="avatar" :src="contacts[index].avatar" alt="">
-                                                <div class="content">
-                                                    <div>{{contacts[index].name}}</div>
-                                                    <div class="grey-text">Ultimo messaggio inviato</div>
-                                                    <div class="clock grey-text">12:00</div>
+                                            <div v-if = "item.visible === true">
+                                                <div class="d-flex align-items-center"  >
+                                                    <img class="avatar" :src="contacts[index].avatar" alt="">
+                                                    <div class="content">
+                                                        <div>{{contacts[index].name}}</div>
+                                                        <div class="grey-text">Ultimo messaggio inviato</div>
+                                                        <div class="clock grey-text">12:00</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                            <div v-else ="">
+                                         </div>
                                     </li>
                                 </ul>
                             </div>
