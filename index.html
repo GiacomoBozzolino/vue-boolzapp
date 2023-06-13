@@ -72,19 +72,16 @@
                             <div>
                                 <ul  class="list-contact p-0 " >
                                     <li v-for="(item, index) in contacts" class="py-2 px-1 border-bottom" :class="main_chat === index ?'active':''" @click="bigChat(index)"  >
-                                       <div v-show="contacts[index].visible === true">
-                                           <div class="d-flex align-items-center"  >
-                                               <img class="avatar" :src="contacts[index].avatar" alt="">
-                                               <div class="content">
-                                                   <div>{{contacts[index].name}}</div>
-                                                   <div class="grey-text">Ultimo messaggio inviato</div>
-                                                   <div class="clock grey-text">12:00</div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       
-
-                                       
+                                        <div :class="item.visible === false ? 'hide':'' ">
+                                            <div class="d-flex align-items-center"  >
+                                                <img class="avatar" :src="contacts[index].avatar" alt="">
+                                                <div class="content">
+                                                    <div>{{contacts[index].name}}</div>
+                                                    <div class="grey-text">Ultimo messaggio inviato</div>
+                                                    <div class="clock grey-text">12:00</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>

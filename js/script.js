@@ -216,8 +216,9 @@ createApp({
                 console.log(found)
                 for (i=0; i < this.contacts.length; i++){
                     let contact = this.contacts[i].name
+                    console.log(contact)
                     let visible = this.contacts[i].visible
-                    // console.log(visible)
+                    console.log(visible)
                     if (contact.includes(found)){
                         visible = true
                         console.log(visible)
@@ -226,7 +227,7 @@ createApp({
                         visible = false
                         console.log(visible)
                     }
-                    return visible
+                    
                 }
         }
 
