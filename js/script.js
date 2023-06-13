@@ -210,7 +210,7 @@ createApp({
             console.log(today)
             return today
         },
-        
+
         search(text_search){
                let found =text_search
                 console.log(found)
@@ -226,6 +226,7 @@ createApp({
                         visible = false
                         console.log(visible)
                     }
+                    return visible
                 }
         }
 

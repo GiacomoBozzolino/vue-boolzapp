@@ -117,8 +117,9 @@ ul{
 }
 
 .hide{
-    display: none;
+    opacity: 0;
 }
+
 /* CLASSI POSIZIONE MESSAGGI */
 .text-sent{
    background-color: #D5F9BA;
