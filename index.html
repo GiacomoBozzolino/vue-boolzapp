@@ -80,8 +80,11 @@
                     <!-- SEZIONE CHAT MESSAGGI -->
                     <div class="col-8 px-0">
                         <div class="content">
-                            <div class="chat" :class="contacts[main_chat].messages">
-                                <div >
+                            <div class="chat" >
+                                <div v-for="(item, index) in contacts" :class="contacts[main_chat].messages.status === received  ?'text-received' :'text-sent' ">
+                                    {{contacts[main_chat].messages.message}}
+
+                                    
                                     
                                 </div>
                                 <div class="text-sent"> 
