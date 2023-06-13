@@ -11,3 +11,10 @@ Milestone 1
 2- assegnare due classi css diverse ai messaggi a seconda se dell'untente o dell'interlocutore
 3- Collegare Vuejs al file e assicurarsi funzioni correttamente
 4- Creazione della lista dei contatti, prima statica così da avere una traccia visiva del risultato e poi in modo dinamico prendendo i dati dall'array nel file js --> usare v-for
+
+
+
+Milestone 2
+●	Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
+●	Click sul contatto mostra la conversazione del contatto cliccato
+

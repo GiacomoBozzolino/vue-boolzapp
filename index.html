@@ -10,7 +10,7 @@
 </head>
     <body>
         <div id="app">
-            <div class="container py-2">
+            <div class="container pt-2">
                 <!-- INFORMAZIONI UTENTE -->
                 <div class="row ">
                     <div class="col-4 backgroundgrey">
@@ -27,11 +27,13 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Utente della chat principale -->
                     <div class="col-8 backgroundgrey">
                         <div class="content d-flex justify-content-between">
                             <div class="d-flex align-items-center">
-                                <img class="avatar" src="./img/avatar_1.jpg" alt="">
-                                <div> Michele</div>
+                                <img class="avatar" :src="contacts[main_chat].avatar" alt="">
+                                <div> {{contacts[main_chat].name}}
+                                </div>
                             </div>
                             <!-- ICONE MENU UTENTE -->
                             <div class="d-flex align-items-center ">
@@ -62,10 +64,13 @@
                             <!-- ELENCO CONTATTI DA RECUPERARE SU JS -->
                             <div>
                                 <ul v-for="(item, index) in contacts" >
-                                    <li class="py-2 border-bottom">
-                                        <div class="d-flex align-items-center">
+                                    <li class="py-2 border-bottom" @click="bigChat(index)">
+                                        <div class="d-flex align-items-center" >
                                             <img class="avatar" :src="contacts[index].avatar" alt="">
-                                            <div> {{contacts[index].name}}</div>
+                                            <div >
+                                                <div>{{contacts[index].name}}</div>
+                                                <div>Ultimo messaggio inviato</div>
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>
@@ -75,9 +80,9 @@
                     <!-- SEZIONE CHAT MESSAGGI -->
                     <div class="col-8 px-0">
                         <div class="content">
-                            <div class="chat ">
-                                <div class="text-sent">
-                                 Hai portato a spasso il cane?
+                            <div class="chat" :class="contacts[main_chat].messages">
+                                <div >
+                                    
                                 </div>
                                 <div class="text-sent"> 
                                     Ricordati di stendere i panni

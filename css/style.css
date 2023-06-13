@@ -5,7 +5,9 @@
 }
 /* INIZIO CLASSI DI UTILITES */
 body{
-    background: linear-gradient(180deg, #009688 15%, #D9DBD4 15%);
+    background: linear-gradient(180deg, #009688 20vh, #D9DBD4 10vh);
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
@@ -13,7 +15,9 @@ body{
     height: 90vh;
 }
 
-
+.container{
+    height: 100vh;
+}
 .content{
     height: 100%;
     position: relative;

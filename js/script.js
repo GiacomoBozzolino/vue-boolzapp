@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            main_chat:0,
             //  INIZIO ARRAY
             contacts: [
                 {
@@ -169,8 +170,22 @@ createApp({
                 
             ]
             // FINE ARRAY
- 
-
         }
     },
+
+    methods: {
+        bigChat(index) {
+            this.main_chat=index
+            console.log(this.main_chat)
+        },
+
+        messages(index){
+            
+
+           
+            
+        }
+    },
+
+
 }).mount('#app')
