@@ -18,3 +18,7 @@ Milestone 2
 ●	Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
 ●	Click sul contatto mostra la conversazione del contatto cliccato
 
+1- Creo un ciclo v-for che estragga i messaggi contenuto nell'array message a sua volta contenuto dentro l'array contacts
+2- Faccio il binding di una classe per status e ci associo una condizione. ? se 0 a ricevuti assegno una classe css : altrimenti assegno un altra classe.
+3- Creo una variabile in appdata main_chat a cui associo il valore =0
+4- recupero questa variabile in una funzione per selezionare la chat corrispondente all'indice dell'array quando clicco su uno dei contatti.
