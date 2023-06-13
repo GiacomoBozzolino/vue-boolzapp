@@ -34,4 +34,5 @@ Milestone 3
     2.2 aggiungo @keyup.enter così da recuperare la funzione newText così da recuperare il testo quando premo invio
 3- all'interno della funzione credo un oggetto che avrà come proprieta status: 'sent' e message:newMessage
     3.1 uso .push per inserire il nuovo messaggio all'interno dell'array
+4- all'interno della funzionenewText aggiungo un SetTimer insime ad un arrow function così da inserire una risposta automatica dopo 1 secondo (1000).
 

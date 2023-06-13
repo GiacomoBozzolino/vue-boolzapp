@@ -185,10 +185,25 @@ createApp({
                 message: newMessage,
                 status: 'sent'
             }
-
             this.contacts[index].messages.push(obj)
             console.log(newMessage)   
             this.newMessage=''
+
+            setTimeout(() => {
+
+                let answer = {
+                    message: 'Klaatu barada nikto',
+                    status: 'received'
+                }
+
+                this.contacts[index].messages.push(answer)
+
+
+              }, "1000");
+              
+
+
+
         }
     },
 
