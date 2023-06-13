@@ -64,7 +64,8 @@
                             <div class="icon p-2 ">
                                <div class="border d-flex align-items-center p-1 bg-white">
                                     <i class="fa-solid fa-magnifying-glass px-1"></i>
-                                   <input class="w-100" type="search" name="search" id="search" placeholder="Cerca o inizia una nuova chat"> 
+                                    <!-- BARRA DI RICERCA CONTATTI -->
+                                   <input @keyup.enter="search(text_search)" v-model="text_search"  class="w-100" type="search" name="search" id="search" placeholder="Cerca o inizia una nuova chat"> 
                                </div>
                             </div>
                             <!-- ELENCO CONTATTI DA RECUPERARE SU JS -->

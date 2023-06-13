@@ -116,6 +116,9 @@ ul{
     color: gray;
 }
 
+.hide{
+    display: none;
+}
 /* CLASSI POSIZIONE MESSAGGI */
 .text-sent{
    background-color: #D5F9BA;

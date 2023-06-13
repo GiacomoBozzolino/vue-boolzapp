@@ -5,6 +5,7 @@ createApp({
         return {
             main_chat:0,
             newMessage:'',
+            text_search:'',
             //  INIZIO ARRAY
             contacts: [
                 {
@@ -201,7 +202,6 @@ createApp({
 
                 this.contacts[index].messages.push(answer)
               }, "1000");
-
         },
         // funzione per generare la data attuale
         date(){
@@ -209,7 +209,26 @@ createApp({
             let today = date.now().setLocale('it').toLocaleString(date.DATETIME_SHORT_WITH_SECONDS);
             console.log(today)
             return today
+        },
+        
+        search(text_search){
+               let found =text_search
+                console.log(found)
+                for (i=0; i < this.contacts.length; i++){
+                    let contact = this.contacts[i].name
+                    let visible = this.contacts[i].visible
+                    // console.log(visible)
+                    if (contact.includes(found)){
+                        visible = true
+                        console.log(visible)
+                    }
+                    else{
+                        visible = false
+                        console.log(visible)
+                    }
+                }
         }
+
     },
 
 
