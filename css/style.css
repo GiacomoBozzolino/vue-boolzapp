@@ -21,6 +21,7 @@ body{
 .content{
     height: 100%;
     position: relative;
+    width: 100%;
     
 }
 
@@ -82,6 +83,11 @@ ul{
     background-color: rgba(0, 0, 0, 0.112);
 }
 
+.clock{
+    position: absolute;
+    right: 0;
+    top:0
+}
 
 /* CLASSI COLONNA-8 */
 
@@ -103,10 +109,11 @@ ul{
     height: 80%;
 }
 
-.date{
+.grey-text{
     font-size: 11px;
-    text-align: right;
+    
     padding-top: 5px;
+    color: gray;
 }
 
 /* CLASSI POSIZIONE MESSAGGI */

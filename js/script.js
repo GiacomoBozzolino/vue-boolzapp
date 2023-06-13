@@ -175,35 +175,40 @@ createApp({
     },
 
     methods: {
+        // funzione per richiamare la chat principale
         bigChat(index) {
             this.main_chat=index
             console.log(this.main_chat)
         },
-
+        // funzione per creare un nuovo messaggio con risposta automatica
         newText(newMessage, index){
             let obj = {
                 message: newMessage,
-                status: 'sent'
+                status: 'sent',
+                date: this.date()
             }
             this.contacts[index].messages.push(obj)
             console.log(newMessage)   
             this.newMessage=''
 
+            // risposta automatica dopo 1 minuto
             setTimeout(() => {
-
                 let answer = {
                     message: 'Klaatu barada nikto',
-                    status: 'received'
+                    status: 'received',
+                    date: this.date()
                 }
 
                 this.contacts[index].messages.push(answer)
-
-
               }, "1000");
-              
 
-
-
+        },
+        // funzione per generare la data attuale
+        date(){
+            let date= luxon.DateTime;
+            let today = date.now().setLocale('it').toLocaleString(date.DATETIME_SHORT_WITH_SECONDS);
+            console.log(today)
+            return today
         }
     },
 
