@@ -22,3 +22,16 @@ Milestone 2
 2- Faccio il binding di una classe per status e ci associo una condizione. ? se 0 a ricevuti assegno una classe css : altrimenti assegno un altra classe.
 3- Creo una variabile in appdata main_chat a cui associo il valore =0
 4- recupero questa variabile in una funzione per selezionare la chat corrispondente all'indice dell'array quando clicco su uno dei contatti.
+
+
+Milestone 3
+●	Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+●	Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+
+1-devo creare una funzione  newText che mi permetta di aggiungere un elemento all'array messages di ogni singola chat
+2- creo una variabile in appdata newMessage=''
+    2.1 utilizzo la variabile creata con un Vmodel all'interno dell'imput così da recuperare quanto scritto dall'utente
+    2.2 aggiungo @keyup.enter così da recuperare la funzione newText così da recuperare il testo quando premo invio
+3- all'interno della funzione credo un oggetto che avrà come proprieta status: 'sent' e message:newMessage
+    3.1 uso .push per inserire il nuovo messaggio all'interno dell'array
+

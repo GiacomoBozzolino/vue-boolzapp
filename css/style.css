@@ -103,6 +103,11 @@ ul{
     height: 80%;
 }
 
+.date{
+    font-size: 11px;
+    text-align: right;
+    padding-top: 5px;
+}
 
 /* CLASSI POSIZIONE MESSAGGI */
 .text-sent{
@@ -124,8 +129,7 @@ ul{
     margin-bottom: 1rem;
     border-radius: 10px ;
 }
-    
-    
+      
 .chat{
     height: calc(100% - 60px);
     background-image: url(.././img/mine.jpg);
@@ -134,7 +138,6 @@ ul{
     display: flex;
     flex-direction: column;
     width: 100%;
-    
 }
 
 

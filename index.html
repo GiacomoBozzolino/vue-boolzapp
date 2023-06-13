@@ -83,7 +83,12 @@
                             <div class="chat" >
                                 <!-- CICLO DI RECUPERO E STAMPA MESSAGGI SINGOLI UTENTI -->
                                 <div v-for="(item, index) in contacts[main_chat].messages" :class="item.status === 'received'  ?'text-received' :'text-sent' ">
-                                    {{item.message}}   
+                                   <div>
+                                       {{item.message}}   
+                                   </div>
+                                   <div class="date">
+                                    {{item.date}}
+                                   </div>
                                 </div> 
                             </div>
                             <div class="d-flex justify-content-around align-items-center write-message ">
