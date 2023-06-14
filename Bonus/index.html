@@ -33,6 +33,7 @@
                         <div class="content d-flex justify-content-between">
                             <div class="d-flex align-items-center ">
                                 <img class="avatar" :src="contacts[main_chat].avatar" alt="">
+                                
                                 <div>
                                     <div> 
                                         {{contacts[main_chat].name}}
@@ -55,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row height ">
+                <div class="row">
                     <!-- SEZIONE ELENCO CONTATTI -->
                     <div class="col-4 px-0">
                         <div class="content bg-white">
@@ -101,20 +102,18 @@
                                         {{item.message}} 
                                       </div>   
                                        <div class="dropdown" >
-                                        <div  data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-angle-down "></i>
-                                        </div>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Informazioni</a></li>
-                                            <li><a class="dropdown-item" href="#" @click="delateMessage(main_chat)">Cancella</a></li>   
-                                        </ul>
-                                        
+                                            <div  data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-angle-down "></i>
+                                            </div>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Informazioni</a></li>
+                                                <li><a class="dropdown-item" href="#" @click="delateMessage(main_chat)">Cancella</a></li>   
+                                            </ul>
                                        </div>
                                    </div>
                                    <div class="grey-text text-end">
                                     {{item.date}}
-                                   </div>
-                                  
+                                   </div>  
                                 </div> 
                             </div>
                             <div class="d-flex justify-content-around align-items-center write-message ">

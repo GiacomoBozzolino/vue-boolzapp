@@ -7,7 +7,7 @@ createApp({
             newMessage:'',
             text_search:'',
             writing: false,
-            status:'',
+            
             //  INIZIO ARRAY
             contacts: [
                 {
