@@ -227,6 +227,10 @@ createApp({
                 }  
             });      
         },
+        delateMessage(index){
+            this.contacts[this.main_chat].messages.splice(index,1)
+            
+          },
 
     },
 
