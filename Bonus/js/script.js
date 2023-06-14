@@ -7,7 +7,7 @@ createApp({
             newMessage:'',
             text_search:'',
             writing: false,
-            
+            status:'',
             //  INIZIO ARRAY
             contacts: [
                 {
@@ -195,22 +195,31 @@ createApp({
                 this.contacts[index].messages.push(obj)
                 console.log(newMessage)   
                 this.newMessage=''
-                
+
+                this.writing = true
                 // risposta automatica dopo 1 minuto
                 setTimeout(() => {
-                    this.writing = true
                     let answer = {
                         message: 'Klaatu barada nikto',
                         status: 'received',
                         date: this.date()
                     }
-                    this.writing
-    
+                    this.writing = false
+                    console.log(this.writing)
                     this.contacts[index].messages.push(answer)
-                  }, "1000");
+
+                  }, 2000);
+
+
             }else if(this.newMessage ==='') {
             }
         },
+       
+
+
+        
+        
+        
         // funzione per generare la data attuale
         date(){
             let date= luxon.DateTime;
