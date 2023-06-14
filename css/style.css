@@ -16,7 +16,7 @@ body{
 }
 
 .container{
-    height: 100vh;
+    height: 100vh
 }
 .content{
     height: 100%;
@@ -55,6 +55,9 @@ ul{
     border-right: 1px solid lightgrey;
 }
 
+.contact{
+    overflow-y: hidden
+}
 /* CLASSI CONTENUTO SECONDA RIGA */
 /* CLASSI COLONNA-4 */
 .allert{
@@ -142,13 +145,14 @@ ul{
 }
       
 .chat{
-    height: calc(100% - 60px);
+    height: 800px;
     background-image: url(.././img/mine.jpg);
     background-position: cover;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
+    overflow-y: auto
 }
 
 

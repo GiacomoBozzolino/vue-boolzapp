@@ -183,25 +183,31 @@ createApp({
         },
         // funzione per creare un nuovo messaggio con risposta automatica
         newText(newMessage, index){
-            let obj = {
-                message: newMessage,
-                status: 'sent',
-                date: this.date()
-            }
-            this.contacts[index].messages.push(obj)
-            console.log(newMessage)   
-            this.newMessage=''
-
-            // risposta automatica dopo 1 minuto
-            setTimeout(() => {
-                let answer = {
-                    message: 'Klaatu barada nikto',
-                    status: 'received',
+            // controllo per non inviare un messaggio vuoto
+            if(this.newMessage !== ''){
+                let obj = {
+                    message: newMessage,
+                    status: 'sent',
                     date: this.date()
                 }
+                this.contacts[index].messages.push(obj)
+                console.log(newMessage)   
+                this.newMessage=''
+                
+                // risposta automatica dopo 1 minuto
+                setTimeout(() => {
+                    let answer = {
+                        message: 'Klaatu barada nikto',
+                        status: 'received',
+                        date: this.date()
+                    }
+    
+                    this.contacts[index].messages.push(answer)
+                  }, "1000");
+            }else if(this.newMessage ==='') {
 
-                this.contacts[index].messages.push(answer)
-              }, "1000");
+            }
+
         },
         // funzione per generare la data attuale
         date(){
@@ -211,20 +217,19 @@ createApp({
             return today
         },
 
-        search(){
-               let found =this.text_search.toLowerCase()
+        search(text_search){
+               let found =text_search.toLowerCase()
                 console.log(found)
                 this.contacts.forEach(element => {
                     if (element.name.toLowerCase().includes(found)){
                         element.visible=true
-
                     }
 
                     else {
                        element.visible=false;
-                    }
-                    
+                    }  
                 });
+                
                 // for (i=0; i < this.contacts.length; i++){
                 //     let contact = this.contacts[i].name
                     
