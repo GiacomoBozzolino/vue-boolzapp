@@ -6,6 +6,7 @@ createApp({
             main_chat:0,
             newMessage:'',
             text_search:'',
+            
             //  INIZIO ARRAY
             contacts: [
                 {
@@ -168,8 +169,7 @@ createApp({
                             status: 'received'
                         }
                     ],
-                }
-                
+                } 
             ]
             // FINE ARRAY
         }
@@ -205,9 +205,7 @@ createApp({
                     this.contacts[index].messages.push(answer)
                   }, "1000");
             }else if(this.newMessage ==='') {
-
             }
-
         },
         // funzione per generare la data attuale
         date(){
@@ -218,34 +216,17 @@ createApp({
         },
 
         search(text_search){
-               let found =text_search.toLowerCase()
-                console.log(found)
-                this.contacts.forEach(element => {
-                    if (element.name.toLowerCase().includes(found)){
-                        element.visible=true
-                    }
-
-                    else {
-                       element.visible=false;
-                    }  
-                });
-                
-                // for (i=0; i < this.contacts.length; i++){
-                //     let contact = this.contacts[i].name
-                    
-                //     let visible = this.contacts[i].visible
-                    
-                //     if (contact.includes(found)){
-                //         visible = true
-                //         console.log(visible)
-                //     }
-                //     else{
-                //         visible = false
-                //         console.log(visible)
-                //     }
-                    
-                // }
-        }
+            let found =text_search.toLowerCase()
+            console.log(found)
+            this.contacts.forEach(element => {
+                if (element.name.toLowerCase().includes(found)){
+                    element.visible=true
+                }
+                else {
+                    element.visible=false;
+                }  
+            });      
+        },
 
     },
 
