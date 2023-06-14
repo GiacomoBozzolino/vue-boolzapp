@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* INIZIO CLASSI DI UTILITES */
+body{
+    background: linear-gradient(180deg, #009688 20vh, #D9DBD4 10vh);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* .height{
+    height: 90vh;
+} */
+
+.container{
+    height: 100vh
+}
+.content{
+    height: 100%;
+    position: relative;
+    width: 100%;
+    
+}
+
+.icon{
+    padding: 0 5px;
+    font-size: 20px;
+    color: grey;
+}
+
+input{
+    border: none;
+
+}
+
+ul{
+    list-style: none;
+}
+/* CLASSI PRIMA RIGA */
+.avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.backgroundgrey{
+    background-color: #eaeaea;
+    height: 70px;
+}
+
+.col-4.backgroundgrey{
+    border-right: 1px solid lightgrey;
+}
+
+.contact{
+    overflow-y: auto;
+    height: 50vh;
+    
+}
+/* CLASSI CONTENUTO SECONDA RIGA */
+/* CLASSI COLONNA-4 */
+.allert{
+    height: 10%;
+    background-color: #8edafc;
+}
+
+#bell{
+    font-size: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    color: #8edafc;
+}
+#text-line{
+    text-decoration: underline;
+    color: grey;
+    font-size: 13px;
+}
+
+.list-contact{
+    cursor: pointer;
+}
+
+.active{
+    background-color: rgba(0, 0, 0, 0.112);
+}
+
+.clock{
+    position: absolute;
+    right: 0;
+    top:0
+}
+
+/* CLASSI COLONNA-8 */
+
+.write-message{
+    height: 60px;
+    background-color: #eaeaea;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+}
+
+.icon.p-2{
+    background-color:#F9F9F9 ;
+}
+
+#message{
+    
+    height: 80%;
+}
+
+.grey-text{
+    font-size: 11px;
+    
+    padding-top: 5px;
+    color: gray;
+}
+
+.hide{
+    display: none;
+}
+
+/* CLASSI POSIZIONE MESSAGGI */
+.text-sent{
+   background-color: #D5F9BA;
+   width: 300px;
+   padding: 15px;
+   align-self: flex-end;
+   margin-right: 5rem;
+   margin-bottom: 1rem;
+   border-radius: 10px ;
+}
+
+.text-received{
+    background-color:#FFFFFF;
+    width: 300px;
+    padding: 15px;
+   
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+    border-radius: 10px ;
+}
+      
+.chat{
+    height: calc(90vh - 60px);
+    background-image: url(.././img/mine.jpg);
+    background-size:auto;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: scroll
+}
+
+
+
+
+
+
+
+

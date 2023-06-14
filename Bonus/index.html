@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp Bonus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+    <body>
+        <div id="app">
+            <div class="container pt-2">
+                <!-- INFORMAZIONI UTENTE -->
+                <div class="row ">
+                    <div class="col-4 backgroundgrey">
+                        <div class="content d-flex justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <img class="avatar" src="./img/avatar_io.jpg" alt="">
+                                <div> Sofia</div>
+                            </div>
+                            <!-- ICONE MENU UTENTE -->
+                            <div class="d-flex align-items-center ">
+                                <i class="fa-solid fa-circle-notch icon" ></i>
+                                <i class="fa-solid fa-message icon"></i>
+                                <i class="fa-solid fa-ellipsis-vertical icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Utente della chat principale -->
+                    <div class="col-8 backgroundgrey">
+                        <div class="content d-flex justify-content-between">
+                            <div class="d-flex align-items-center ">
+                                <img class="avatar" :src="contacts[main_chat].avatar" alt="">
+                                <div>
+                                    <div> 
+                                        {{contacts[main_chat].name}}
+                                    </div>
+                                    <div class="grey-text">
+                                        Ultimo contatto oggi alle 12:00
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ICONE MENU UTENTE -->
+                            <div class="d-flex align-items-center ">
+                                <i class="fa-solid fa-magnifying-glass icon" ></i>
+                                <i class="fa-solid fa-paperclip icon"></i>
+                                <i class="fa-solid fa-ellipsis-vertical icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row height ">
+                    <!-- SEZIONE ELENCO CONTATTI -->
+                    <div class="col-4 px-0">
+                        <div class="content bg-white">
+                            <div class="allert d-flex align-items-center px-2">
+                                <i class="fa-solid fa-bell-slash" id="bell"></i>
+                                <div class="px-2">
+                                    <div>Ricevi notifiche di nuovi messaggi</div>
+                                    <div id="text-line">Attiva notifiche desktop</div>
+                                </div>
+                            </div>
+                            <div class="icon p-2 ">
+                               <div class="border d-flex align-items-center p-1 bg-white">
+                                    <i class="fa-solid fa-magnifying-glass px-1"></i>
+                                    <!-- BARRA DI RICERCA CONTATTI -->
+                                   <input @keyup="search(text_search)" v-model="text_search"  class="w-100" type="search" name="search" id="search" placeholder="Cerca o inizia una nuova chat"> 
+                               </div>
+                            </div>
+                            <!-- ELENCO CONTATTI DA RECUPERARE SU JS -->
+                            <div>
+                                <ul  class="list-contact p-0 " >
+                                    <li v-for="(item, index) in contacts" class="py-2 px-1 border-bottom" :class="main_chat === index ?'active':''" @click="bigChat(index)" v-show = "item.visible === true" >
+                                        <div class="d-flex align-items-center"  >
+                                            <img class="avatar" :src="contacts[index].avatar" alt="">
+                                            <div class="content">
+                                                <div>{{contacts[index].name}}</div>
+                                                <div class="grey-text">Ultimo messaggio inviato</div>
+                                                <div class="clock grey-text">12:00</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SEZIONE CHAT MESSAGGI -->
+                    <div class="col-8 px-0">
+                        <div class="content">
+                            <div class="chat" >
+                                <!-- CICLO DI RECUPERO E STAMPA MESSAGGI SINGOLI UTENTI -->
+                                <div v-for="(item, index) in contacts[main_chat].messages" :class="item.status === 'received'  ?'text-received' :'text-sent' ">
+                                   <div>
+                                       {{item.message}}   
+                                   </div>
+                                   <div class="grey-text text-end">
+                                    {{item.date}}
+                                   </div>
+                                </div> 
+                            </div>
+                            <div class="d-flex justify-content-around align-items-center write-message ">
+                                <i class="fa-regular fa-face-smile icon"></i>
+                                <!-- INPUT PER INSERIRE IL NUOVO MESSAGGIO -->
+                                <input @keyup.enter="newText(newMessage, main_chat)" v-model="newMessage" class="w-75" type="text" name="message" id="message" placeholder=" Scrivi un messaggio">
+                                <i class="fa-solid fa-microphone icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.min.js" integrity="sha512-KKbQg5o92MwtJKR9sfm/HkREzfyzNMiKPIQ7i7SZOxwEdiNCm4Svayn2DBq7MKEdrqPJUOSIpy1v6PpFlCQ0YA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script type="text/javascript" src="./js/script.js"></script>        
+    </body>
+</html>
