@@ -6,6 +6,7 @@ createApp({
             main_chat:0,
             newMessage:'',
             text_search:'',
+            writing: false,
             
             //  INIZIO ARRAY
             contacts: [
@@ -185,6 +186,7 @@ createApp({
         newText(newMessage, index){
             // controllo per non inviare un messaggio vuoto
             if(this.newMessage !== ''){
+                
                 let obj = {
                     message: newMessage,
                     status: 'sent',
@@ -196,11 +198,13 @@ createApp({
                 
                 // risposta automatica dopo 1 minuto
                 setTimeout(() => {
+                    this.writing = true
                     let answer = {
                         message: 'Klaatu barada nikto',
                         status: 'received',
                         date: this.date()
                     }
+                    this.writing
     
                     this.contacts[index].messages.push(answer)
                   }, "1000");
@@ -214,7 +218,7 @@ createApp({
             console.log(today)
             return today
         },
-
+        // funzione per ricerca contatto
         search(text_search){
             let found =text_search.toLowerCase()
             console.log(found)
@@ -227,10 +231,17 @@ createApp({
                 }  
             });      
         },
+        // funzione per cancellare i messaggi
         delateMessage(index){
-            this.contacts[this.main_chat].messages.splice(index,1)
+            this.contacts[index].messages.splice(index,1)
             
           },
+
+          lastMsg(index) {
+			let msg = this.contacts[index].messages;
+            let lastMsg=msg[msg.length - 1]
+			return lastMsg
+        }
 
     },
 

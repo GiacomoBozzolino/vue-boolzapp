@@ -37,9 +37,13 @@
                                     <div> 
                                         {{contacts[main_chat].name}}
                                     </div>
-                                    <div class="grey-text">
-                                        Ultimo contatto oggi alle 12:00
+                                    <div class="grey-text" v-if="writing === false">
+                                        Ultimo contatto {{lastMsg(main_chat).date}}
                                     </div>
+                                   <div v-else>
+                                    Sta scrivendo...
+                                   </div>
+
                                 </div>
                             </div>
                             <!-- ICONE MENU UTENTE -->
@@ -77,8 +81,8 @@
                                             <img class="avatar" :src="contacts[index].avatar" alt="">
                                             <div class="content">
                                                 <div>{{contacts[index].name}}</div>
-                                                <div class="grey-text">Ultimo messaggio inviato</div>
-                                                <div class="clock grey-text">12:00</div>
+                                                <div class="grey-text">{{lastMsg(index).message}}</div>
+                                                <div class="clock grey-text">{{lastMsg(index).date}}</div>
                                             </div>
                                         </div>
                                     </li>
