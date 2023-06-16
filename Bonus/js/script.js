@@ -185,7 +185,7 @@ createApp({
         // funzione per creare un nuovo messaggio con risposta automatica
         newText(newMessage, index){
             // controllo per non inviare un messaggio vuoto
-            if(this.newMessage !== ''){
+            if(this.newMessage !== ''|| this.newMessage === ' ' ){
                 
                 let obj = {
                     message: newMessage,
@@ -239,12 +239,11 @@ createApp({
         // funzione per cancellare i messaggi
         delateMessage(index){
             this.contacts[this.main_chat].messages.splice(index, 1)
-            
         },
 
         lastMsg(index) {
 			let msg = this.contacts[index].messages;
-            let lastMsg=msg[msg.length - 1]
+            let lastMsg=msg[msg.length -1]
 			return lastMsg
         }
 

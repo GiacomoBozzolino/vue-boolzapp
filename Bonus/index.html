@@ -39,7 +39,11 @@
                                         {{contacts[main_chat].name}}
                                     </div>
                                     <div class="grey-text" v-if="writing === false">
-                                        Ultimo contatto {{lastMsg(main_chat).date}}
+                                        <div v-if="lastMsg(main_chat) ">
+                                            Ultimo contatto {{lastMsg(main_chat).date}}
+                                        </div>
+                                        <div v-else></div>
+
                                     </div>
                                    <div v-else>
                                     Sta scrivendo... 
@@ -80,21 +84,24 @@
                                     <li v-for="(item, index) in contacts" class="py-2 px-1 border-bottom" :class="main_chat === index ?'active':''" @click="bigChat(index)" v-show = "item.visible === true" >
                                         <div class="d-flex align-items-center"  >
                                             <img class="avatar" :src="contacts[index].avatar" alt="">
-                                            <div class="content">
+                                            <div class="content" v-if="lastMsg(index)">
                                                 <div>{{contacts[index].name}}</div>
                                                 <div class="grey-text">{{lastMsg(index).message}}</div>
                                                 <div class="clock grey-text">{{lastMsg(index).date}}</div>
                                             </div>
+                                            <div v-else>
+
+                                            </div>
                                         </div>
                                     </li>
-                                </ul>
+                                </ul> 
                             </div>
                         </div>
                     </div>
                     <!-- SEZIONE CHAT MESSAGGI -->
                     <div class="col-8 px-0">
                         <div class="content">
-                            <div class="chat" >
+                            <div class="chat pb-5" >
                                 <!-- CICLO DI RECUPERO E STAMPA MESSAGGI SINGOLI UTENTI -->
                                 <div v-for="(item, index) in contacts[main_chat].messages" :class="item.status === 'received'  ?'text-received' :'text-sent' ">
                                    <div class="d-flex justify-content-between">
