@@ -192,6 +192,7 @@ createApp({
                     status: 'sent',
                     date: this.date()
                 }
+
                 this.contacts[index].messages.push(obj)
                 console.log(newMessage)   
                 this.newMessage=''
@@ -214,11 +215,6 @@ createApp({
             }else if(this.newMessage ==='') {
             }
         },
-       
-
-
-        
-        
         
         // funzione per generare la data attuale
         date(){
@@ -242,11 +238,11 @@ createApp({
         },
         // funzione per cancellare i messaggi
         delateMessage(index){
-            this.contacts[index].messages.splice(index,1)
+            this.contacts[this.main_chat].messages.splice(index, 1)
             
-          },
+        },
 
-          lastMsg(index) {
+        lastMsg(index) {
 			let msg = this.contacts[index].messages;
             let lastMsg=msg[msg.length - 1]
 			return lastMsg
